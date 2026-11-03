@@ -1,0 +1,15 @@
+{
+  "incidentId": "INC-404",
+  "title": "Read Replica Replication Lag Spike",
+  "service": "Order Ledger DB",
+  "impactTier": "SEV-2",
+  "rootCause": "Unindexed batch analytics query locked WAL segments and delayed read replica sync by 140 seconds.",
+  "mitigationSteps": [
+    "Terminate blocking PID",
+    "Route analytics to warehouse replica",
+    "Add composite index on created_at",
+    "Verify WAL replay"
+  ],
+  "resolutionDate": "Thu Oct 08 2026 00:00:00 GMT+0530 (India Standard Time)",
+  "status": "PUBLISHED"
+}

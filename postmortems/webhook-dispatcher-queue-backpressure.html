@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>INC-403 - Webhook Dispatcher Queue Backpressure</title><style>body{font-family:sans-serif;background:#ffffff;color:#0f172a;padding:32px;max-width:820px;margin:auto;}.card{background:#f8fafc;padding:24px;border-radius:12px;border:1px solid #cbd5e1;}.btn{display:inline-block;margin-top:16px;padding:10px 18px;background:#0f766e;color:#ffffff;font-weight:800;border-radius:8px;text-decoration:none;cursor:pointer;border:none;}</style></head><body><div class="card"><h1>INC-403: Webhook Dispatcher Queue Backpressure</h1><p><strong>Service:</strong> Event Broker | <strong>Impact Tier:</strong> SEV-1 | <strong>Date:</strong> Mon Oct 05 2026 00:00:00 GMT+0530 (India Standard Time)</p><h3>Root Cause Summary</h3><p>Downstream partner endpoint latency exhausted worker thread pool and stalled outbound webhooks.</p><h3>Mitigation Steps</h3><ol><li>Isolate slow tenant queue</li><li>Enable circuit breaker at 2000ms</li><li>Scale consumer pod replicas to 16</li><li>Replay dead-letter queue</li></ol><button class="btn" onclick="dlJson()">Download webhook-dispatcher-queue-backpressure.json</button><p><a href="../index.html" style="color:#1d4ed8;font-weight:700;">Back to Master SLA Catalogue</a></p></div><script>var payload = {
+  "incidentId": "INC-403",
+  "title": "Webhook Dispatcher Queue Backpressure",
+  "service": "Event Broker",
+  "impactTier": "SEV-1",
+  "rootCause": "Downstream partner endpoint latency exhausted worker thread pool and stalled outbound webhooks.",
+  "mitigationSteps": [
+    "Isolate slow tenant queue",
+    "Enable circuit breaker at 2000ms",
+    "Scale consumer pod replicas to 16",
+    "Replay dead-letter queue"
+  ],
+  "resolutionDate": "Mon Oct 05 2026 00:00:00 GMT+0530 (India Standard Time)",
+  "status": "PUBLISHED"
+}; function dlJson(){var b=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="webhook-dispatcher-queue-backpressure.json";a.click();}</script></body></html>

@@ -1,0 +1,15 @@
+{
+  "incidentId": "INC-403",
+  "title": "Webhook Dispatcher Queue Backpressure",
+  "service": "Event Broker",
+  "impactTier": "SEV-1",
+  "rootCause": "Downstream partner endpoint latency exhausted worker thread pool and stalled outbound webhooks.",
+  "mitigationSteps": [
+    "Isolate slow tenant queue",
+    "Enable circuit breaker at 2000ms",
+    "Scale consumer pod replicas to 16",
+    "Replay dead-letter queue"
+  ],
+  "resolutionDate": "Mon Oct 05 2026 00:00:00 GMT+0530 (India Standard Time)",
+  "status": "PUBLISHED"
+}
