@@ -1,0 +1,15 @@
+{
+  "incidentId": "INC-405",
+  "title": "TLS Certificate Auto-Renewal Failure",
+  "service": "Edge Ingress",
+  "impactTier": "SEV-3",
+  "rootCause": "ACME DNS-01 challenge timed out due to stale TXT record lock in secondary DNS provider.",
+  "mitigationSteps": [
+    "Clear stale TXT record",
+    "Force cert-manager renewal",
+    "Sync TLS secret across ingress pods",
+    "Add 14-day expiry pager alert"
+  ],
+  "resolutionDate": "Sat Oct 10 2026 00:00:00 GMT+0530 (India Standard Time)",
+  "status": "PUBLISHED"
+}
