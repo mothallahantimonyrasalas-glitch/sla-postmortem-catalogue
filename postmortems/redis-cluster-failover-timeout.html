@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>INC-401 - Redis Cluster Failover Timeout</title><style>body{font-family:sans-serif;background:#ffffff;color:#0f172a;padding:32px;max-width:820px;margin:auto;}.card{background:#f8fafc;padding:24px;border-radius:12px;border:1px solid #cbd5e1;}.btn{display:inline-block;margin-top:16px;padding:10px 18px;background:#0f766e;color:#ffffff;font-weight:800;border-radius:8px;text-decoration:none;cursor:pointer;border:none;}</style></head><body><div class="card"><h1>INC-401: Redis Cluster Failover Timeout</h1><p><strong>Service:</strong> Checkout Cache | <strong>Impact Tier:</strong> SEV-1 | <strong>Date:</strong> Thu Oct 01 2026 00:00:00 GMT+0530 (India Standard Time)</p><h3>Root Cause Summary</h3><p>Primary Redis node hit memory ceiling during flash sale causing split-brain election timeout.</p><h3>Mitigation Steps</h3><ol><li>Drain stale connections</li><li>Promote replica node</li><li>Increase maxmemory-policy to allkeys-lru</li><li>Add Sentinel quorum alert</li></ol><button class="btn" onclick="dlJson()">Download redis-cluster-failover-timeout.json</button><p><a href="../index.html" style="color:#1d4ed8;font-weight:700;">Back to Master SLA Catalogue</a></p></div><script>var payload = {
+  "incidentId": "INC-401",
+  "title": "Redis Cluster Failover Timeout",
+  "service": "Checkout Cache",
+  "impactTier": "SEV-1",
+  "rootCause": "Primary Redis node hit memory ceiling during flash sale causing split-brain election timeout.",
+  "mitigationSteps": [
+    "Drain stale connections",
+    "Promote replica node",
+    "Increase maxmemory-policy to allkeys-lru",
+    "Add Sentinel quorum alert"
+  ],
+  "resolutionDate": "Thu Oct 01 2026 00:00:00 GMT+0530 (India Standard Time)",
+  "status": "PUBLISHED"
+}; function dlJson(){var b=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="redis-cluster-failover-timeout.json";a.click();}</script></body></html>
